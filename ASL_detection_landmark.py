@@ -1,7 +1,8 @@
 from utils import detector_utils as detector_utils
-from cv2 import cv2
+import cv2
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import multiprocessing
 from multiprocessing import Queue, Pool
 import time
