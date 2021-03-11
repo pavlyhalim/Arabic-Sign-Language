@@ -68,7 +68,7 @@ while True:
     img = cv2.flip(img, 1)
     
     if ret:
-        x1, y1, x2, y2 = 350, 350, 700, 700
+        x1, y1, x2, y2 = 150, 150, 400, 400
         img_cropped = img[y1:y2, x1:x2]
 
         image_data = cv2.imencode('.jpg', img_cropped)[1].tostring()
@@ -93,12 +93,12 @@ while True:
         frame_counter += 1
         img_pil = Image.fromarray(img)
         draw = ImageDraw.Draw(img_pil)
-        draw.text((10, 300), bidi_text, (255,255,255), font=font)
+        draw.text((10, 300), bidi_text, (0,0,0), font=font)
         img = np.array(img_pil)
         #cv2.putText(img, '%s' % (res.upper()), (100,400), cv2.FONT_HERSHEY_SIMPLEX, 4, (255,255,255), 4)
-        cv2.putText(img, '(score = %.5f)' % (float(score)), (100,450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
-        cv2.rectangle(img, (x1, y1), (x2, y2), (255,0,0), 2)
-        cv2.imshow("img", img)
+        cv2.putText(img, '(score = %.5f)' % (float(score)), (100,450), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0))
+        cv2.rectangle(img, (x1, y1), (x2, y2), (0,255,0), 2)
+        cv2.imshow("Simple Test", img)
 
         
         if a == 27: # when `esc` is pressed
