@@ -82,7 +82,7 @@ def worker(input_q, output_q, cropped_output_q, inferences_q, landmark_ouput_q,c
 
     print(">> loading keras model for worker")
     try:
-        model = tf.keras.models.load_model('models/asl_char_model.h5', compile=False)
+        model = tf.keras.models.load_model('models/asl_model.h5', compile=False)
     except Exception as e:
         print(e)
 
@@ -283,8 +283,7 @@ if __name__ == '__main__':
             cropped_output = np.array(img_pil)
             if (args.display > 0):
                 cv2.namedWindow('Cropped', cv2.WINDOW_NORMAL)
-                cv2.resizeWindow('Cropped', 450, 300)
-                cv2.putText(cropped_output, '(score= %.2f)' % (float(score)), (10,100), cv2.FONT_HERSHEY_COMPLEX, 1, (255,0,0))
+                cv2.resizeWindow('Cropped', 550, 400)
                 cv2.imshow('Cropped', cropped_output)
                 #cv2.imwrite('image_' + str(num_frames) + '.png', cropped_output)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -302,7 +301,7 @@ if __name__ == '__main__':
             landmark_ouput = cv2.cvtColor(landmark_ouput, cv2.COLOR_RGB2BGR)
             if (args.display > 0):
                 cv2.namedWindow('LandMark', cv2.WINDOW_NORMAL)
-                cv2.resizeWindow('LandMark', 450, 300)
+                cv2.resizeWindow('LandMark', 550, 400)
                 cv2.imshow('LandMark', landmark_ouput)
                 #cv2.imwrite('image_' + str(num_frames) + '.png', cropped_output)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
