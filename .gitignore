@@ -1,2 +1,4 @@
 /protos/*
 /utils/*
+/dist/*
+/build/*
