@@ -10,7 +10,7 @@ The overview of the proposed system with four stages: data acquisition, pre-proc
 
 # Feature extraction
 
-The features from the digits were extracted using the CNN algorithm as shown in figure (3). The architecture of the proposed CNN model was configured similarly to the VGGNet. However, we used only six convolutional layers compared to VGGNet which has a minimum of 13 layers. The two consecutive convolutional layers were followed by the batch normalization for faster training convergence. As the input, 54,049 RGB images of size 64 × 64 × 3 pixels were fed into the model with a batch size of 32. The model was trained and tested with two different sizes of filters, the max-pooling of two strides, ReLU, and the SoftMax activation functions. At the end, the trained model was saved.
+The features from the digits were extracted using the CNN algorithm. The architecture of the proposed CNN model was configured similarly to the VGGNet. However, we used only six convolutional layers compared to VGGNet which has a minimum of 13 layers. The two consecutive convolutional layers were followed by the batch normalization for faster training convergence. As the input, 54,049 RGB images of size 64 × 64 × 3 pixels were fed into the model with a batch size of 32. The model was trained and tested with two different sizes of filters, the max-pooling of two strides, ReLU, and the SoftMax activation functions. At the end, the trained model was saved.
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
 
