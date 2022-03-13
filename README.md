@@ -7,16 +7,18 @@ People with special needs face various challenges and barriers that isolate them
 # How it works
 The overview of the proposed system with four stages: data acquisition, pre-processing, feature extraction, and recognition. The images and video frames were provided as the input to the system and the output was the predicted sign digit displayed in Arabic was augmented to add variations to the dataset and the model was trained using CNN. The model was saved and loaded with OpenCV to recognize the letters in real-time
 
-#Feature extraction
+# Feature extraction
 
 The features from the digits were extracted using the CNN algorithm as shown in figure (3). The architecture of the proposed CNN model was configured similarly to the VGGNet. However, we used only six convolutional layers compared to VGGNet which has a minimum of 13 layers. The two consecutive convolutional layers were followed by the batch normalization for faster training convergence. As the input, 54,049 RGB images of size 64 × 64 × 3 pixels were fed into the model with a batch size of 32. The model was trained and tested with two different sizes of filters, the max-pooling of two strides, ReLU, and the SoftMax activation functions. At the end, the trained model was saved.
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
-Feature extraction
 
+# Image recognition
+
+The trained model was loaded on a laptop using TensorFlow as backend, OpenCV to read video frames, Visual Studio Code, and Python as the editor and programming language, respectively. OpenCV captures real-time hand-shaped video frames from the signer and rescaled them into 64 × 64 × 3 pixels. The model successfully detects and predicts sign digits. The trained model was used to predict ARSL letter in real-time using webcam
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060280-fd2cc2d7-7f7d-4ffb-b4e2-b21afd07081c.png">
-Image recognition and translate sign to letter ك 
+
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060248-7471dde2-c4c5-44b3-83c0-5ba15496b8dd.png">
 Extracting features using RGB
