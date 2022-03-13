@@ -52,12 +52,14 @@ The performance of the ARSL recognition system was evaluated with five Sign Lang
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158064403-149d8c42-ff6c-4e78-8b6a-9ed21c5ff520.png">
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158064405-241f1cf0-13a0-4f48-b1fa-35553ec64573.png">
 
-Test accuracy: Accuracy vs. epoch, Test Loss: Loss vs. epoch (https://user-images.githubusercontent.com/49916453/158064424-030459b5-8ee6-4b3b-ad0b-0ef15651dcd6.png)
+Test accuracy: Accuracy vs. epoch, Test Loss: Loss vs. epoch
 
-The results got generated using tensorflow.keras as shown below. In addition of data during training as shown in graph 7 calculating the accuracy and loss of the generated model after training with the specified batch size. 
+The results got generated using tensorflow.keras as in the model notebook on Google Colab after training the model with the specified amount. In addition of data during training as shown in graph 7 calculating the accuracy and loss of the generated model after training with the specified batch size
+ 
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158064446-a7ae6f0f-2172-42c1-9917-270e455d9eff.png">
 
+The generated results from Google colab
 
 
 # Future work
