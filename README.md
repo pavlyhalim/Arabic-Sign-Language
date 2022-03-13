@@ -26,8 +26,7 @@ Output of Pre-processing and cropping to remove the unwanted parts of image ![im
 
   
 # Dataset
-  - #### [SignsWorld Atlas](https://data.mendeley.com/datasets/y7pckrw6z2/1?fbclid=IwAR0ucbKGH9VdkzI2LccuTnk5wcoMQ0odAKSQkq6wKmG9-cvsDj4hwm9Rnb8)
-    - Description of this data
+
       - The Arabic Alphabets Sign Language Dataset (ArASL), A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets as shown in Figure (8). The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
 
       - ### Note: [Google Colab](https://drive.google.com/open?id=18LIsB5eia_HQ342jxD3MWOVlWnit_yLL)
