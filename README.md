@@ -19,22 +19,28 @@ The trained model was loaded on a laptop using TensorFlow as backend, OpenCV to 
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060280-fd2cc2d7-7f7d-4ffb-b4e2-b21afd07081c.png">
 
+# Sign Language Recognition Using CNN
+
+Four layers are there in a CNN, for the classification problems. The layers are convolution layers, pooling/subsampling layers, non-linear layers, and fully connected layers. 
+
+# Convolutional Layer 
+
+The convolution is a special operation that extracts different features of the input. The first it extracts low-level features like edges and corners. Then higher-level layers extract higher-level features as shown. For the process of 3D convolution in CNNs. The input is of size N x N x D and is convolved with the H kernels, each of them sized to k x k x D separately. Convolution of one input with one kernel produces one output feature, and with H kernels independently produces H features, respectively. Starts from top-left corner of the input, each kernel is moved from left to right. Once the top right corner reached, kernel is moved one element downward, and once again the kernel is moved from left to right, one element at a time. Process is done continuously until the kernel reaches the bottom-right corner. 
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060248-7471dde2-c4c5-44b3-83c0-5ba15496b8dd.png">
-Extracting features using RGB
+
+# Preprocessing Model
+
+Main aim of pre-processing is an improvement of the image data that reduce unwanted deviation or enhances image features for further processing. Preprocessing is also referred as an attempt to capture the important pattern which express the uniqueness in data without noise or unwanted data which includes cropping, resizing and gray scaling. Cropping refers to the removal of the unwanted parts of an image to improve framing, accentuate subject matter or change aspect ratio as shown in figure (11). Resizing Images are resized to suit the space allocated or available. Resizing image are tips for keeping quality of original image. Changing the physical size affects the physical size but not the resolution
 
 <img alt="image" src="https://user-images.githubusercontent.com/49916453/158060201-1215c67e-4168-4db2-9047-7621a2ea4240.png"> 
-Output of Pre-processing and cropping to remove the unwanted parts of image
-
-
 
   
 # Dataset
 
-      - The Arabic Alphabets Sign Language Dataset (ArASL), A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets as shown in Figure (8). The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
+ - The Arabic Alphabets Sign Language Dataset (ArASL), A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets as shown in Figure (8). The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
 
-      - ### Note: [Google Colab](https://drive.google.com/open?id=18LIsB5eia_HQ342jxD3MWOVlWnit_yLL)
-
+ - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1 
 
 
 # Performance/Accuracy
