@@ -11,7 +11,8 @@ The overview of the proposed system with four stages: data acquisition, pre-proc
 
 # Sample
 
-Feature extraction![image] <img width="221" alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
+Feature extraction
 
 
 Image recognition and translate sign to letter ك ![image] <img width="220" alt="image" src="https://user-images.githubusercontent.com/49916453/158060280-fd2cc2d7-7f7d-4ffb-b4e2-b21afd07081c.png">
