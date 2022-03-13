@@ -1,5 +1,6 @@
 # Sign-Language
-## Problem Overview
+
+# Abstract
 
 People with special needs face various challenges and barriers that isolate them from their surroundings and challenge their opportunity to work, which is one of the Egyptian grand challenges. Nowadays, several assistive technologies have been developed to reduce many of these barriers and simplify the communication between special-needs persons and the surrounding environment. However, very few frameworks are presented to support them in the Arabic region either due to the lack of resources or the Arabic language's complexity. The purpose of the study is to present a framework that will help Arabic deaf people communicate 'on the go' easily, virtually, with anyone without any specific devices or support from other people. Framework has been used to utilize cloud computing power for the complex processing of Arabic text and Videos. The video processing produced an Arabic text showing the corresponding Standard Arabic Language on the mobile handset of the deaf person. After the prototype was tested, the results showed that it successfully met the design requirements: high accuracy, precision, and being artificially intelligent (by using modern AI algorithms, CNN, that provides good performance for video life tracking). In conclusion, the prototype proved to be easily applicable due to its easy operation.
 
