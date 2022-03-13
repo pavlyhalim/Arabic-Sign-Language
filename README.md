@@ -1,53 +1,56 @@
 # Sign-Language
 ## Problem Overview
-  People with special-needs face a variety of different challenges and barriers that isolate them from their surroundings. Nowadays, several assistive technologies have been developed to reduce many of these barriers and simplify the communication between special-needs persons and the surrounding environment. However, few frameworks are presented to support them in the Arabic region either due to the lack of resources or the complexity of the Arabic language. The main goal of this work is to present a mobile-based framework that will help Arabic deaf people to communicate ‘on the go’ easily with virtually any one without the need of any specific devices or support from other people. 
+
+People with special needs face various challenges and barriers that isolate them from their surroundings and challenge their opportunity to work, which is one of the Egyptian grand challenges. Nowadays, several assistive technologies have been developed to reduce many of these barriers and simplify the communication between special-needs persons and the surrounding environment. However, very few frameworks are presented to support them in the Arabic region either due to the lack of resources or the Arabic language's complexity. The purpose of the study is to present a framework that will help Arabic deaf people communicate 'on the go' easily, virtually, with anyone without any specific devices or support from other people. Framework has been used to utilize cloud computing power for the complex processing of Arabic text and Videos. The video processing produced an Arabic text showing the corresponding Standard Arabic Language on the mobile handset of the deaf person. After the prototype was tested, the results showed that it successfully met the design requirements: high accuracy, precision, and being artificially intelligent (by using modern AI algorithms, CNN, that provides good performance for video life tracking). In conclusion, the prototype proved to be easily applicable due to its easy operation.
+
 
 # How it works
-  We use the framework utilizes the power of cloud computing for the complex processing of the Arabic text and Videos. The video processing produced a Arabic text showing the corresponding Standard Arabic Language on the mobile handset of the deaf person.
+The overview of the proposed system with four stages: data acquisition, pre-processing, feature extraction, and recognition. The images and video frames were provided as the input to the system and the output was the predicted sign digit displayed in Arabic was augmented to add variations to the dataset and the model was trained using CNN. The model was saved and loaded with OpenCV to recognize the letters in real-time
 
-# Hand tracking and facial landmarks
-  - ### Run simple (Character level)
-  ```
-  $ python3 simple_test.py
-  ```
-  
-  - ### Run (Character level - hand detection- facial landmarks)
-      NOTE: Download [facial landmarks](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) model and put it in  <b>landmarks folder.
-  ```
-  $ python3 ASL_detection_landmark.py
-  ```
-  - ### Run (hand detection & tracking)
-  ```
-  $ python3 hand_detection_tracking.py
-  ```
-  
+
 
 # Sample
-- ## Text to Sign Language
-  <img src="https://github.com/7AM7/Sign-Language/blob/master/videos/Text-to-sign-gif.gif" width="160" height="280" />
-- ## Sign Language to Text
-  <img src="https://github.com/7AM7/Sign-Language/blob/master/videos/sign-to-text-gif.gif" width="280" height="200" />
 
+Feature extraction![image] <img width="221" alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
+
+
+Image recognition and translate sign to letter ك ![image] <img width="220" alt="image" src="https://user-images.githubusercontent.com/49916453/158060280-fd2cc2d7-7f7d-4ffb-b4e2-b21afd07081c.png">
+
+Extracting features using RGB![image] <img width="103" alt="image" src="https://user-images.githubusercontent.com/49916453/158060248-7471dde2-c4c5-44b3-83c0-5ba15496b8dd.png">
+
+
+Output of Pre-processing and cropping to remove the unwanted parts of image ![image] <img width="138" alt="image" src="https://user-images.githubusercontent.com/49916453/158060201-1215c67e-4168-4db2-9047-7621a2ea4240.png"> 
+
+
+
+
+  
 # Dataset
   - #### [SignsWorld Atlas](https://data.mendeley.com/datasets/y7pckrw6z2/1?fbclid=IwAR0ucbKGH9VdkzI2LccuTnk5wcoMQ0odAKSQkq6wKmG9-cvsDj4hwm9Rnb8)
     - Description of this data
-      - A new dataset consists of 54,049 images of ArSL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets. The number of images per class differs from one class to another. Sample image of all Arabic Language Signs is also attached. The CSV file contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
+      - The Arabic Alphabets Sign Language Dataset (ArASL), A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets as shown in Figure (8). The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
+
       - ### Note: [Google Colab](https://drive.google.com/open?id=18LIsB5eia_HQ342jxD3MWOVlWnit_yLL)
 
-# Our Approach
+
 
 # Performance/Accuracy
 
-# Benchmark
 
 # Future work
-  - ### Build simple Machine Learning model with [SignsWorld Atlas](https://data.mendeley.com/datasets/y7pckrw6z2/1?fbclid=IwAR0ucbKGH9VdkzI2LccuTnk5wcoMQ0odAKSQkq6wKmG9-cvsDj4hwm9Rnb8).
-  - ### Build simple Deep Learning model with [SignsWorld Atlas](https://data.mendeley.com/datasets/y7pckrw6z2/1?fbclid=IwAR0ucbKGH9VdkzI2LccuTnk5wcoMQ0odAKSQkq6wKmG9-cvsDj4hwm9Rnb8).
+  - GANs stands for Generative Adversarial Networks. These are a type of generative model because they learn to copy the data distribution of the data you give it and therefore can generate novel images that look alike.  The reason why a GAN is named “adversarial”, is because it involves two competing networks (adversaries) as shown in Figure (16), that try to outwit each other. To improve our project prediction and the dataset quality we can use the GAN to create a new process and method before the CNN. The new process with using the GAN will help to create the dataset with a higher quality using real videos and photos to generate new samples for the Arabic sign language hand moves with the perfect quality and shape to improve the hand detection in the CNN processes and. Also, keeping the dataset continuously updated and improve the quality by type. 
+ 
 
-# Resources
-- [Sign language recognition using scikit-learn](https://www.freecodecamp.org/news/weekend-projects-sign-language-and-static-gesture-recognition-using-scikit-learn-60813d600e79/?fbclid=IwAR12SNgtkL9rydJ2-n-cMtA-P2uK4b4OWde8GgEwXtedbw-sJHAERpJDlfE) is an introduction Sign language using ML and how it works.
-- [Sign Language Recognition Datasets](http://facundoq.github.io/unlp/sign_language_datasets/?fbclid=IwAR2fBOoA97S_IiUgfLdaEVb3kKqld2quDk2_6oAEHDk4_gz22wnNWphJcQ4).
-- [ArASL](https://www.sciencedirect.com/science/article/pii/S2352340919301283).
-- [SignsWorld Atlas benchmark](https://www.sciencedirect.com/science/article/pii/S1319157814000548)
-- [hand detection](https://github.com/victordibia/handtracking)
-- [hand tracking](https://github.com/adipandas/multi-object-tracker)
+
+# Literature cited:
+
+  - The World Bank, & Plecher, H. (2020, October 13). Egypt Unemployment ratedata,chart.TheGlobalEconomy.Com.https://www.theglobaleconomy.com/Egypt/unemployment_rate/
+
+  - Pigou L., Dieleman S., Kindermans PJ., Schrauwen B. (2015) Sign Language Recognition Using Convolutional Neural Networks. In: Agapito L., Bronstein M., Rother C. (eds) Computer Vision - ECCV 2014 Workshops. ECCV 2014. Lecture Notes in Computer Science, vol 8925. Springer, Cham, doi:10.1007/978-3-319-16178-5_40
+
+  - Jie Huang, Wengang Zhou, Houqiang Li and Weiping Li, "Sign Language Recognition using 3D convolutional neural networks," 2015 IEEE International Conference on - - Multimedia and Expo (ICME), Turin, Italy, 2015, pp. 1-6, doi: 10.1109/ICME.2015.7177428. 
+
+  - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1
+
+  - Karma Wangchuk, Panomkhawn Riyamongkol, Rattapoom Waranusast, Real-time Bhutanese Sign Language digits recognition system using Convolutional Neural Network,ICT Express,2020,,ISSN 2405-9595, doi:10.1016/j.icte.2020.08.00
+
