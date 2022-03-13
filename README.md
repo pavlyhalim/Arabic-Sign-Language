@@ -28,13 +28,13 @@ Four layers are there in a CNN, for the classification problems. The layers are 
 
 The convolution is a special operation that extracts different features of the input. The first it extracts low-level features like edges and corners. Then higher-level layers extract higher-level features as shown. For the process of 3D convolution in CNNs. The input is of size N x N x D and is convolved with the H kernels, each of them sized to k x k x D separately. Convolution of one input with one kernel produces one output feature, and with H kernels independently produces H features, respectively. Starts from top-left corner of the input, each kernel is moved from left to right. Once the top right corner reached, kernel is moved one element downward, and once again the kernel is moved from left to right, one element at a time. Process is done continuously until the kernel reaches the bottom-right corner. 
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060248-7471dde2-c4c5-44b3-83c0-5ba15496b8dd.png">
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060963-36a42851-f759-4566-86bf-0ffb827988fa.png">
 
 # Preprocessing Model
 
 Main aim of pre-processing is an improvement of the image data that reduce unwanted deviation or enhances image features for further processing. Preprocessing is also referred as an attempt to capture the important pattern which express the uniqueness in data without noise or unwanted data which includes cropping, resizing and gray scaling. Cropping refers to the removal of the unwanted parts of an image to improve framing, accentuate subject matter or change aspect ratio as shown in figure (11). Resizing Images are resized to suit the space allocated or available. Resizing image are tips for keeping quality of original image. Changing the physical size affects the physical size but not the resolution
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060201-1215c67e-4168-4db2-9047-7621a2ea4240.png"> 
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060966-4ae38d22-4d61-45e3-a577-7b64f9a224f8.png">
 
   
 # Dataset
