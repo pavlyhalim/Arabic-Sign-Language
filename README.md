@@ -44,7 +44,20 @@ Main aim of pre-processing is an improvement of the image data that reduce unwan
  - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1 
 
 
-# Performance/Accuracy
+# Results/Accuracy:
+
+For training the model, the Google Colab online GPU was used. The different Sign Language models were trained with TensorFlow as the backend after splitting the dataset into training and testing sets of 80% and 20% respectively with a batch size of 32. 
+The performance of the ARSL recognition system was evaluated with five Sign Language using CNN model network, figure (6) compares the proposed CNN model accuracy and loss. The early stopping was used to stop the training to avoid overfitting. The training stopped early after the completion of 12 epochs. 
+
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064403-149d8c42-ff6c-4e78-8b6a-9ed21c5ff520.png">
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064405-241f1cf0-13a0-4f48-b1fa-35553ec64573.png">
+
+Test accuracy: Accuracy vs. epoch, Test Loss: Loss vs. epoch (https://user-images.githubusercontent.com/49916453/158064424-030459b5-8ee6-4b3b-ad0b-0ef15651dcd6.png)
+
+The results got generated using tensorflow.keras as shown below. In addition of data during training as shown in graph 7 calculating the accuracy and loss of the generated model after training with the specified batch size. 
+
+<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064446-a7ae6f0f-2172-42c1-9917-270e455d9eff.png">
+
 
 
 # Future work
