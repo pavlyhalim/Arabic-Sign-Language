@@ -38,7 +38,7 @@ Main aim of pre-processing is an improvement of the image data that reduce unwan
   
 # Dataset
 
- - The Arabic Alphabets Sign Language Dataset (ArASL), A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets as shown in Figure (8). The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
+ - The Arabic Alphabets Sign Language Dataset (ArASL)[https://data.mendeley.com/datasets/y7pckrw6z2/1], A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets. The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
 
  - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1 
 
