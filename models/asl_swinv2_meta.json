@@ -1,0 +1,50 @@
+{
+  "model_name": "swinv2_base_window12to16_192to256.ms_in22k_ft_in1k",
+  "num_classes": 32,
+  "img_size": 256,
+  "classes": [
+    "ain",
+    "al",
+    "aleff",
+    "bb",
+    "dal",
+    "dha",
+    "dhad",
+    "fa",
+    "gaaf",
+    "ghain",
+    "ha",
+    "haa",
+    "jeem",
+    "kaaf",
+    "khaa",
+    "la",
+    "laam",
+    "meem",
+    "nun",
+    "ra",
+    "saad",
+    "seen",
+    "sheen",
+    "ta",
+    "taa",
+    "thaa",
+    "thal",
+    "toot",
+    "waw",
+    "ya",
+    "yaa",
+    "zay"
+  ],
+  "best_val_acc": 99.40795559666975,
+  "normalize_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalize_std": [
+    0.229,
+    0.224,
+    0.225
+  ]
+}

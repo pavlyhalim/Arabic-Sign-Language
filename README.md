@@ -46,24 +46,35 @@ Main aim of pre-processing is an improvement of the image data that reduce unwan
 
 # Results/Accuracy:
 
-For training the model, the Google Colab online GPU was used. The different Sign Language models were trained with TensorFlow as the backend after splitting the dataset into training and testing sets of 80% and 20% respectively with a batch size of 32. 
-The performance of the ARSL recognition system was evaluated with five Sign Language using CNN model network, figure (6) compares the proposed CNN model accuracy and loss. The early stopping was used to stop the training to avoid overfitting. The training stopped early after the completion of 12 epochs. 
+## V1 — CNN (2020)
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064403-149d8c42-ff6c-4e78-8b6a-9ed21c5ff520.png">
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064405-241f1cf0-13a0-4f48-b1fa-35553ec64573.png">
+For training the original model, the Google Colab online GPU was used. The CNN model was trained with TensorFlow as the backend after splitting the dataset into training and testing sets of 80% and 20% respectively with a batch size of 32. The early stopping was used to stop the training to avoid overfitting. The training stopped early after the completion of 12 epochs. 
+
+<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064403-149d8c42-ff6c-4e78-8b6a-9ed21c5ff520.png”>
+<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064405-241f1cf0-13a0-4f48-b1fa-35553ec64573.png”>
 
 Test accuracy: Accuracy vs. epoch, Test Loss: Loss vs. epoch
 
-The results got generated using tensorflow.keras as in the model notebook on Google Colab after training the model with the specified amount. In addition of data during training as shown in graph 7 calculating the accuracy and loss of the generated model after training with the specified batch size
- 
+<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064446-a7ae6f0f-2172-42c1-9917-270e455d9eff.png”>
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158064446-a7ae6f0f-2172-42c1-9917-270e455d9eff.png">
+## V2 — Swin Transformer V2 (2026)
 
-The generated results from Google colab
+The system was upgraded from the original 3-layer CNN (648K parameters, 64x64 input) to a Swin Transformer V2 Base (86.9M parameters, 256x256 input) pretrained on ImageNet-22K and fine-tuned on the ArASL dataset. The model was trained on Google Colab using a T4 GPU with a two-phase approach: transfer learning with a frozen base followed by fine-tuning the top 30% of layers. Hand detection was upgraded from a fixed bounding box to real-time hand tracking using MediaPipe HandLandmarker which dynamically follows the hand with a smoothed bounding box and skeleton overlay.
 
+The new model achieved **99.41% validation accuracy** across all 32 Arabic sign classes, with 12 classes reaching 100% accuracy and no class below 96%.
+
+To run the updated real-time detection:
+ - Download `asl_swinv2_best.pth` from [Releases](https://github.com/pavlyhalim/Arabic-Sign-Language/releases/tag/v2.0) and place it in `models/`
+ - Install dependencies: `pip install -r requirements.txt`
+ - Run: `python simple_test_swinv2.py`
+
+The original CNN-based version is still available via `simple_test.py` using the `asl_model.h5` weights.
 
 # Future work
-  - GANs stands for Generative Adversarial Networks. These are a type of generative model because they learn to copy the data distribution of the data you give it and therefore can generate novel images that look alike.  The reason why a GAN is named “adversarial”, is because it involves two competing networks (adversaries) as shown in Figure (16), that try to outwit each other. To improve our project prediction and the dataset quality we can use the GAN to create a new process and method before the CNN. The new process with using the GAN will help to create the dataset with a higher quality using real videos and photos to generate new samples for the Arabic sign language hand moves with the perfect quality and shape to improve the hand detection in the CNN processes and. Also, keeping the dataset continuously updated and improve the quality by type. 
+  - Extend the framework to support other Arabic sign language dialects including Kuwaiti, Saudi, and Egyptian sign language by retraining on region-specific datasets
+  - Add word-level and sentence-level recognition using temporal models (LSTM/Transformer) on video sequences rather than single frame classification
+  - Explore MediaPipe hand landmarks as direct input features for a lightweight classifier that would be background and lighting invariant
+  - Build a mobile application for on-device inference using CoreML or TensorFlow Lite conversion
  
 
 
