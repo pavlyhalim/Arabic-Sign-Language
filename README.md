@@ -12,13 +12,13 @@ The overview of the proposed system with four stages: data acquisition, pre-proc
 
 The features from the digits were extracted using the CNN algorithm. The architecture of the proposed CNN model was configured similarly to the VGGNet. However, we used only six convolutional layers compared to VGGNet which has a minimum of 13 layers. The two consecutive convolutional layers were followed by the batch normalization for faster training convergence. As the input, 54,049 RGB images of size 64 × 64 × 3 pixels were fed into the model with a batch size of 32. The model was trained and tested with two different sizes of filters, the max-pooling of two strides, ReLU, and the SoftMax activation functions. At the end, the trained model was saved.
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060312-50b07841-25f3-4fd8-b8dc-a52d71454021.png">
+<img alt="image" src="images/1.png">
 
 # Image recognition
 
 The trained model was loaded on a laptop using TensorFlow as backend, OpenCV to read video frames, Visual Studio Code, and Python as the editor and programming language, respectively. OpenCV captures real-time hand-shaped video frames from the signer and rescaled them into 64 × 64 × 3 pixels. The model successfully detects and predicts sign digits. The trained model was used to predict ARSL letter in real-time using webcam
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060280-fd2cc2d7-7f7d-4ffb-b4e2-b21afd07081c.png">
+<img alt="image" src="images/2.png">
 
 # Sign Language Recognition Using CNN
 
@@ -28,36 +28,41 @@ Four layers are there in a CNN, for the classification problems. The layers are 
 
 The convolution is a special operation that extracts different features of the input. The first it extracts low-level features like edges and corners. Then higher-level layers extract higher-level features as shown. For the process of 3D convolution in CNNs. The input is of size N x N x D and is convolved with the H kernels, each of them sized to k x k x D separately. Convolution of one input with one kernel produces one output feature, and with H kernels independently produces H features, respectively. Starts from top-left corner of the input, each kernel is moved from left to right. Once the top right corner reached, kernel is moved one element downward, and once again the kernel is moved from left to right, one element at a time. Process is done continuously until the kernel reaches the bottom-right corner. 
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060963-36a42851-f759-4566-86bf-0ffb827988fa.png">
+<img alt="image" src="images/3.png">
 
 # Preprocessing Model
 
 Main aim of pre-processing is an improvement of the image data that reduce unwanted deviation or enhances image features for further processing. Preprocessing is also referred as an attempt to capture the important pattern which express the uniqueness in data without noise or unwanted data which includes cropping, resizing and gray scaling. Cropping refers to the removal of the unwanted parts of an image to improve framing, accentuate subject matter or change aspect ratio as shown in figure (11). Resizing Images are resized to suit the space allocated or available. Resizing image are tips for keeping quality of original image. Changing the physical size affects the physical size but not the resolution
 
-<img alt="image" src="https://user-images.githubusercontent.com/49916453/158060966-4ae38d22-4d61-45e3-a577-7b64f9a224f8.png">
+<img alt="image" src="images/4.png">
 
   
 # Dataset
 
  - The Arabic Alphabets Sign Language Dataset (ArASL)[https://data.mendeley.com/datasets/y7pckrw6z2/1], A new dataset consists of 54,049 images of ArASL alphabets performed by more than 40 people for 32 standard Arabic signs and alphabets. The number of images per class differs from one class to another. Sample image of all Arabic Language Signs. The dataset contains the Label of each corresponding Arabic Sign Language Image based on the image file name.
 
- - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1 
+ - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), "Arabic Alphabets Sign Language Dataset (ArASL)", Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1 
 
 
 # Results/Accuracy:
 
-## V1 — CNN (2020)
+For training the model, the Google Colab online GPU was used. The different Sign Language models were trained with TensorFlow as the backend after splitting the dataset into training and testing sets of 80% and 20% respectively with a batch size of 32. 
+The performance of the ARSL recognition system was evaluated with five Sign Language using CNN model network, figure (6) compares the proposed CNN model accuracy and loss. The early stopping was used to stop the training to avoid overfitting. The training stopped early after the completion of 12 epochs. 
 
-For training the original model, the Google Colab online GPU was used. The CNN model was trained with TensorFlow as the backend after splitting the dataset into training and testing sets of 80% and 20% respectively with a batch size of 32. The early stopping was used to stop the training to avoid overfitting. The training stopped early after the completion of 12 epochs. 
-
-<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064403-149d8c42-ff6c-4e78-8b6a-9ed21c5ff520.png”>
-<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064405-241f1cf0-13a0-4f48-b1fa-35553ec64573.png”>
+<img alt="image" src="images/5.png">
+<img alt="image" src="images/6.png">
 
 Test accuracy: Accuracy vs. epoch, Test Loss: Loss vs. epoch
 
-<img alt=”image” src=”https://user-images.githubusercontent.com/49916453/158064446-a7ae6f0f-2172-42c1-9917-270e455d9eff.png”>
+The results got generated using tensorflow.keras as in the model notebook on Google Colab after training the model with the specified amount. In addition of data during training as shown in graph 7 calculating the accuracy and loss of the generated model after training with the specified batch size
+ 
 
-## V2 — Swin Transformer V2 (2026)
+<img alt="image" src="images/7.png">
+
+The generated results from Google colab
+
+
+# Updated Model — Swin Transformer V2 (2026)
 
 The system was upgraded from the original 3-layer CNN (648K parameters, 64x64 input) to a Swin Transformer V2 Base (86.9M parameters, 256x256 input) pretrained on ImageNet-22K and fine-tuned on the ArASL dataset. The model was trained on Google Colab using a T4 GPU with a two-phase approach: transfer learning with a frozen base followed by fine-tuning the top 30% of layers. Hand detection was upgraded from a fixed bounding box to real-time hand tracking using MediaPipe HandLandmarker which dynamically follows the hand with a smoothed bounding box and skeleton overlay.
 
@@ -86,7 +91,7 @@ The original CNN-based version is still available via `simple_test.py` using the
 
   - Jie Huang, Wengang Zhou, Houqiang Li and Weiping Li, "Sign Language Recognition using 3D convolutional neural networks," 2015 IEEE International Conference on - - Multimedia and Expo (ICME), Turin, Italy, 2015, pp. 1-6, doi: 10.1109/ICME.2015.7177428. 
 
-  - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), “Arabic Alphabets Sign Language Dataset (ArASL)”, Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1
+  - Latif, Ghazanfar; Alghazo, Jaafar; Mohammad, Nazeeruddin; AlKhalaf, Roaa; AlKhalaf, Rawan (2018), "Arabic Alphabets Sign Language Dataset (ArASL)", Mendeley Data, V1, doi: 10.17632/y7pckrw6z2.1
 
   - Karma Wangchuk, Panomkhawn Riyamongkol, Rattapoom Waranusast, Real-time Bhutanese Sign Language digits recognition system using Convolutional Neural Network,ICT Express,2020,,ISSN 2405-9595, doi:10.1016/j.icte.2020.08.00
 
